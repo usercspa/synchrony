@@ -10,6 +10,6 @@ On the back-end,
 - safely store app secrets in `.env`
 
 On the front-end,
-- edit `client.js`, `style.css` and `index.html`
+- edit `style.css` and `index.html`
 - drag in `assets`, like images or music, to add them to your project
 
