@@ -1,7 +1,7 @@
 import os
 import requests
 from flask import Flask, render_template, request
-from jinja2 import Template, Environment, FileSystemLoader
+from jinja2 import Template, Environment, FileSystemLoader, PackageLoader, select_autoescape
 from firebase import firebase
 
 app = Flask(__name__)
@@ -21,6 +21,12 @@ def homepage():
 
 if __name__ == '__main__':
     app.run()
+  
+# configure Jinja to load templates 
+env = Environment(
+    loader=PackageLoader('yourapplication', 'templates'),
+    autoescape=select_autoescape(['html', 'xml'])
+)
     
 pyperclip.copy('link')
 
