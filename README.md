@@ -5,7 +5,7 @@ Your Project
 ------------
 
 On the back-end,
-- your app starts at `server.py`
+- your app starts at `app.py`
 - add frameworks and packages in `requirements.txt`
 - safely store app secrets in `.env`
 
