@@ -28,23 +28,60 @@
   </head>
   <body>
     <header>
+      <img src="https://cdn.glitch.com/e4331c28-5348-4c6d-a2d6-a8777f81ce5d%2FWhatsApp_Image_2020-11-21_at_02.20.01-removebg-preview.png?v=1606017723204" size="100x100">
+      <link
+      rel="logo"
+      type="image/x-icon"
+      href="https://cdn.glitch.com/e4331c28-5348-4c6d-a2d6-a8777f81ce5d%2FWhatsApp_Image_2020-11-21_at_02.20.01-removebg-preview.png?v=1606017723204"
+      sizes="16x16"
+    />
       <h1>
         SynChrony 
-      </h1> <br>
+      </h1>
       <h2>
         Your meeting scheduler
       </h2>
     </header>
 
     <main>
-      <p class="bold">Let's get started</p>
-      <p>What's your timezone?</p>
-      <form>
+    
+  
+    <% import time %>
+    <% time.tzname %>
+    <br>
+
+      <div>
+        <button type="copy">
+        Copy invitation link
+        </button>
+      </div> <br>
+      
+      <form action="{{url_for('render_results')}}" method="POST">
+        <p class="bold" position="center">Let's get started</p>
+        <p>What's your timezone?</p>
         <input type="text" maxlength="100" placeholder="timezone">
         <button type="submit">Submit</button>
       </form>
+      
+      
 
     </main>
+      
+    <div>
+      
+        <form action="{{url_for('render_results')}}" method="POST">
+        <p class="bold" position="center">Input your avaliability</p>
+        <input type="text" maxlength="100" placeholder="time separate by ,">
+        <button type="submit">Submit</button>
+      </form>
+      </div>
+   
+     
+  <div>
+    <button type="submit">
+      Find the best time to meet
+    </button>
+      </div>
 
     <footer>
       <a>
