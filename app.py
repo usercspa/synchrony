@@ -20,3 +20,9 @@ if __name__ == '__main__':
     app.run()
     
 pyperclip.copy('link')
+
+#get timezone
+response = requests.get("http://api.timezonedb.com/v2.1/list-time-zone?key=16OLECLBWBT9&format=json")
+zones = response.json()["zones"]
+for z in zones:
+    print(z["zoneName"])
