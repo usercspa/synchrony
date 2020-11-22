@@ -10,18 +10,19 @@
 
 body {
   margin: 25px;
-  display: flex;
-	flex-direction: column;
 	font-family: 'Montserrat', sans-serif;
 	text-align: center;
-	background: #000000;
+	background: #222222;
 }
 
-}
 
-h1 {
+
+
+
+h1, h2 {
   font-weight: bold;
-  color: white;
+  color: #FFFFFF;
+  text-align: center;
 }
 
 .bold {
@@ -30,6 +31,8 @@ h1 {
 
 p {
   max-width: 600px;
+  color: #FFFFFF;
+
 }
 
 form {
@@ -40,6 +43,11 @@ form {
   width: 100%;
   max-width: 340px;
   border-radius: 3px;
+}
+
+img {
+    width:20%; /* you can use % */
+    height: auto;
 }
 
 input {
