@@ -21,20 +21,41 @@ def homepage():
 
 if __name__ == '__main__':
     app.run()
-  
-# configure Jinja to load templates 
-env = Environment(
-    loader=PackageLoader('yourapplication', 'templates'),
-    autoescape=select_autoescape(['html', 'xml'])
-)
-    
-pyperclip.copy('link')
 
 #get timezone
 response = requests.get("http://api.timezonedb.com/v2.1/list-time-zone?key=16OLECLBWBT9&format=json")
 zones = response.json()["zones"]
 for z in zones:
     print(z["zoneName"])
+    
+  
+# configure Jinja to load templates 
+env = Environment(
+    loader=PackageLoader('yourapplication', 'templates'),
+    autoescape=select_autoescape(['html', 'xml'])
+)
+
+def autoescape(template_name):
+    if template_name is None:
+        return False
+    if template_name.endswith(('.html', '.htm', '.xml'))
+    
+  # load function
+
+def load_template(name):
+      if name == 'index.html':
+       return '...'
+loader = FunctionLoader(load_template)
+
+#copy link
+pyperclip.copy('link')
+
+# find the best tme
+response = requests.get("http://api.cronofy.com/v1/availability")
+availability = response.json()["availability"]
+for a in availability :
+    print(a["bestTime"])
+    
     
 #python-firebase authentication
 firebase = firebase.FirebaseApplication('https://your_storage.firebaseio.com', authentication=None)
